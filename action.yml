@@ -1,0 +1,18 @@
+name: Design Tokens Transform
+description: 'Automatically transforms your design tokens into CSS-like variables file.'
+
+author: Marek Polakowski <marek.polakowski@gmail.com>
+
+branding:
+  icon: box
+  color: purple
+
+runs:
+  using: node16
+  main: index.js
+
+inputs:
+  source_file:
+    description: Path to JSON file containing design tokens
+    required: true
+    default: ./tokens.json

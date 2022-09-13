@@ -1,0 +1,22 @@
+{
+  "name": "design-tokens-transform-action",
+  "version": "0.0.1",
+  "description": "GitHub action that transforms your design tokens into CSS-like variables",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polakowski/design-tokens-transform-action.git"
+  },
+  "main": "index.js",
+  "keywords": [
+    "design-tokens",
+    "github-actions"
+  ],
+  "author": "Marek Polakowski <marek.polakowski@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/polakowski/design-tokens-transform-action/issues"
+  },
+  "devDependencies": {
+    "token-transformer": "^0.0.26"
+  }
+}
