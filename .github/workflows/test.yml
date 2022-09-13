@@ -1,0 +1,13 @@
+name: test
+
+on:
+  - push
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    uses: ./
+    with:
+      source_file: './tokens.json'
+      target_file: './_variables.sass'

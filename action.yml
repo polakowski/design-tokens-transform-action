@@ -16,3 +16,8 @@ inputs:
     description: Path to JSON file containing design tokens
     required: true
     default: ./tokens.json
+
+  target_file:
+    description: Path to SASS file containing values
+    required: true
+    default: ./variables.sass
