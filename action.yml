@@ -14,10 +14,10 @@ runs:
 inputs:
   source_file:
     description: Path to JSON file containing design tokens
-    required: true
+    required: false
     default: ./tokens.json
 
   target_file:
-    description: Path to SASS file containing values
-    required: true
+    description: Path to output file containing values
+    required: false
     default: ./variables.sass

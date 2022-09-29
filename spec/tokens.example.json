@@ -1,203 +1,15 @@
 {
   "global": {
-    "additional": {
-      "modal": {
-        "value": "#1e26244d",
-        "type": "color"
-      },
+    "colors": {
       "purple": {
-        "100": {
-          "value": "#F6F6FE",
-          "type": "color"
-        },
-        "200": {
-          "value": "#E9E9FC",
-          "type": "color"
-        },
-        "700": {
+        "500": {
           "value": "#8788f3",
           "type": "color"
         }
       },
-      "beige": {
-        "100": {
-          "value": "#F5FAF0",
-          "type": "color"
-        },
-        "200": {
-          "value": "#F1F7E9",
-          "type": "color"
-        },
+      "green": {
         "500": {
-          "value": "#b4b48c",
-          "type": "color"
-        },
-        "600": {
-          "value": "#a6a65e",
-          "type": "color"
-        }
-      },
-      "orange": {
-        "100": {
-          "value": "#fff5eb",
-          "type": "color"
-        },
-        "200": {
-          "value": "#FFF0E0",
-          "type": "color"
-        },
-        "500": {
-          "value": "#ff8f1f",
-          "type": "color"
-        }
-      },
-      "aqua": {
-        "100": {
-          "value": "#EBFFFB",
-          "type": "color"
-        },
-        "200": {
-          "value": "#E0FFF9",
-          "type": "color"
-        },
-        "500": {
-          "value": "#05e0b6",
-          "type": "color"
-        },
-        "600": {
-          "value": "#04C39E",
-          "type": "color"
-        }
-      },
-      "gray": {
-        "500": {
-          "value": "#f9f9f9",
-          "type": "color"
-        }
-      }
-    },
-    "primary": {
-      "100": {
-        "value": "#f5fafa",
-        "type": "color"
-      },
-      "200": {
-        "value": "#ebf5f3",
-        "type": "color"
-      },
-      "300": {
-        "value": "#c1d7d6",
-        "type": "color"
-      },
-      "500": {
-        "value": "#80a8a4",
-        "type": "color"
-      },
-      "800": {
-        "value": "#004d3e",
-        "type": "color"
-      },
-      "900": {
-        "value": "#003027",
-        "type": "color"
-      }
-    },
-    "neutrals": {
-      "100": {
-        "value": "#f7f7f7",
-        "type": "color"
-      },
-      "200": {
-        "value": "#eff0f0",
-        "type": "color"
-      },
-      "300": {
-        "value": "#dadddc",
-        "type": "color"
-      },
-      "400": {
-        "value": "#b2b8b7",
-        "type": "color"
-      },
-      "500": {
-        "value": "#929b99",
-        "type": "color"
-      },
-      "600": {
-        "value": "#788784",
-        "type": "color"
-      },
-      "700": {
-        "value": "#526662",
-        "type": "color"
-      },
-      "800": {
-        "value": "#2d3937",
-        "type": "color"
-      },
-      "900": {
-        "value": "#1e2624",
-        "type": "color"
-      },
-      "white": {
-        "value": "#ffffff",
-        "type": "color"
-      }
-    },
-    "state": {
-      "danger": {
-        "100": {
-          "value": "#fff1f0",
-          "type": "color"
-        },
-        "200": {
-          "value": "#ffe5e0",
-          "type": "color"
-        },
-        "500": {
-          "value": "#ff583e",
-          "type": "color"
-        },
-        "600": {
-          "value": "#ec4f36",
-          "type": "color"
-        }
-      },
-      "info": {
-        "100": {
-          "value": "#ECF7FE",
-          "type": "color"
-        },
-        "500": {
-          "value": "#179bed",
-          "type": "color"
-        }
-      },
-      "success": {
-        "100": {
-          "value": "#ecf9ef",
-          "type": "color"
-        },
-        "500": {
-          "value": "#51a461",
-          "type": "color"
-        }
-      },
-      "warning": {
-        "100": {
-          "value": "#FDFBEC",
-          "type": "color"
-        },
-        "200": {
-          "value": "#FCF8DE",
-          "type": "color"
-        },
-        "500": {
-          "value": "#dec30c",
-          "type": "color"
-        },
-        "600": {
-          "value": "#CDB304",
+          "value": "#2da44e",
           "type": "color"
         }
       }
@@ -316,8 +128,8 @@
       }
     },
     "fontFamilies": {
-      "open-sans": {
-        "value": "Open Sans",
+      "base": {
+        "value": "Helvetica",
         "type": "fontFamilies"
       }
     },
