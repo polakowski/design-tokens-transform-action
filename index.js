@@ -5,9 +5,19 @@ const { execSync } = require('child_process');
 const { exit } = require('process');
 /* eslint-enable no-undef, @typescript-eslint/no-var-requires */
 
-const sourceFile = process.env.INPUT_SOURCE_FILE;
-const targetFile = process.env.INPUT_TARGET_FILE;
+const getEnv = (name, defaultValue) => {
+  if (name in process.env) {
+    return process.env[name];
+  }
+
+  return defaultValue;
+};
+
+const sourceFile = getEnv('INPUT_SOURCE_FILE', './tokens.json');
+const targetFile = getEnv('INPUT_TARGET_FILE', './variables.sass');
 const tokensFile = './__transformed__.json';
+
+const debugMode = !!getEnv('DEBUG');
 
 const SUPPORTED_TYPES = [
   'sizing',
@@ -40,6 +50,27 @@ if (!fs.existsSync(sourceFile)) {
   const categories = [];
 
   const px = (value) => value + 'px';
+  const em = (value) => value + 'em';
+
+  const ensureUnit = (value, transformer) => {
+    if (
+      typeof value === 'number'
+        || /^[0-9.]+$/.test(value)
+    ) {
+      return transformer(value);
+    }
+
+    return value;
+  };
+
+  const percentsToEm = (value) => {
+    if (/^-?[0-9.]+%$/.test(value) !== true) return value;
+
+    const withoutPercentSign = value.replace(/%$/, '');
+    const asNumber = Number(withoutPercentSign);
+
+    return em(asNumber * 0.01);
+  };
 
   const objectToMap = (value) => {
     const entries = [];
@@ -70,8 +101,20 @@ if (!fs.existsSync(sourceFile)) {
       }).join(',');
     }
 
+    if (type === 'fontSizes') {
+      return ensureUnit(value, px);
+    }
+
+    if (type === 'letterSpacing') {
+      return percentsToEm(value);
+    }
+
     if (type === 'typography') {
       return objectToMap(value);
+    }
+
+    if (type === 'paragraphSpacing') {
+      return ensureUnit(value, px);
     }
 
     return `${value}`;
@@ -114,8 +157,7 @@ if (!fs.existsSync(sourceFile)) {
     return [
       `$${variable.name}:`.padEnd(40),
       variable.value,
-      // ' ',
-      // `// type: ${variable.type}`,
+      debugMode ? ` // type: ${variable.type}` : '',
     ].join('');
   };
 
