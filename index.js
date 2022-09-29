@@ -43,7 +43,7 @@ if (!fs.existsSync(sourceFile)) {
 }
 
 (async () => {
-  execSync('yarn install');
+  execSync('yarn install --ignore-engines');
   execSync(`yarn token-transformer ${sourceFile} ${tokensFile}`)
 
   const outputJson = fs.readFileSync(tokensFile);
