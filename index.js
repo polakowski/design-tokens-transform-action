@@ -5,6 +5,8 @@ const { execSync } = require('child_process');
 const { exit } = require('process');
 /* eslint-enable no-undef, @typescript-eslint/no-var-requires */
 
+const PATH_SEP = '/';
+
 const getEnv = (name, defaultValue) => {
   if (name in process.env) {
     return process.env[name];
@@ -176,10 +178,18 @@ if (!fs.existsSync(sourceFile)) {
     lines.push('');
   }
 
-  console.info(`Writing "${targetFile}"...`)
+  const targetDir = path.dirname(targetFile);
+
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir);
+  }
+
+  console.info(`Writing "${targetFile}"...`);
+
   fs.writeFileSync(targetFile, lines.join('\n'));
 
-  console.info(`Cleanup - removing "${tokensFile}"...`)
+  console.info(`Cleanup - removing "${tokensFile}"...`);
+
   fs.unlinkSync(tokensFile);
 
   console.info('Done!');
