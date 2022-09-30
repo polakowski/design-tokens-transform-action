@@ -5,8 +5,6 @@ const { execSync } = require('child_process');
 const { exit } = require('process');
 /* eslint-enable no-undef, @typescript-eslint/no-var-requires */
 
-const PATH_SEP = '/';
-
 const getEnv = (name, defaultValue) => {
   if (name in process.env) {
     return process.env[name];
@@ -43,8 +41,11 @@ if (!fs.existsSync(sourceFile)) {
 }
 
 (async () => {
+  const npmRoot = execSync('npm root -g').toString().trim();
+  const transformer = path.join(npmRoot, 'token-transformer');
+
   execSync('npm install -g token-transformer');
-  execSync(`node token-transformer ${sourceFile} ${tokensFile}`)
+  execSync(`node ${transformer} ${sourceFile} ${tokensFile}`);
 
   const outputJson = fs.readFileSync(tokensFile);
   const tokens = JSON.parse(outputJson);
