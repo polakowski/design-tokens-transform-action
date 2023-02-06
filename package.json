@@ -17,6 +17,6 @@
     "url": "https://github.com/polakowski/design-tokens-transform-action/issues"
   },
   "devDependencies": {
-    "token-transformer": "^0.0.26"
+    "token-transformer": "0.0.26"
   }
 }

@@ -29,7 +29,7 @@ if (!fs.existsSync(sourceFile)) {
   const npmRoot = execSync('npm root -g').toString().trim();
   const transformer = path.join(npmRoot, 'token-transformer');
 
-  execSync('npm install -g token-transformer');
+  execSync('npm install -g token-transformer@0.0.26');
   execSync(`node ${transformer} ${sourceFile} ${tokensFile}`);
 
   const outputJson = fs.readFileSync(tokensFile);
